@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.17.1 - 2016-05-20T12:45:32.566Z
+ * Version: 0.17.1 - 2016-08-03T07:21:53.175Z
  * License: MIT
  */
 
@@ -28,7 +28,11 @@
 .ui-select-choices-row {
     border-bottom: 1px solid #e4e4e4;
 }
-.ui-select-choices-row:hover {
+.ui-select-choices-row.disabled {
+    background: #DFDFE1;
+    color: #c2c2c4;
+}
+.ui-select-choices-row:not(.disabled):hover {
     background-color: #ffffff;
     color: #00AECB;
 }

@@ -20,7 +20,11 @@
 .ui-select-choices-row {
     border-bottom: 1px solid #e4e4e4;
 }
-.ui-select-choices-row:hover {
+.ui-select-choices-row.disabled {
+    background: #DFDFE1;
+    color: #c2c2c4;
+}
+.ui-select-choices-row:not(.disabled):hover {
     background-color: #ffffff;
     color: #00AECB;
 }

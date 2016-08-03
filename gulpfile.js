@@ -2,7 +2,7 @@ var fs = require('fs');
 var del = require('del');
 var gulp = require('gulp');
 var es = require('event-stream');
-var karma = require('karma').server;
+var karma = require('karma').Server;
 var $ = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 var conventionalRecommendedBump = require('conventional-recommended-bump');
@@ -27,8 +27,8 @@ gulp.task('watch', ['build','karma-watch'], function() {
   gulp.watch(['src/**/*.{js,html}'], ['build']);
 });
 
-gulp.task('clean', function(cb) {
-  del(['dist'], cb);
+gulp.task('clean', function() {
+  del(['dist']);
 });
 
 gulp.task('scripts', ['clean'], function() {
@@ -184,8 +184,8 @@ gulp.task('docs:index', function () {
     return '<h4><a href="./' + filename + '">' + cleaned + '</a> <plnkr-opener example-path="' + filename + '"></plnkr-opener></h4>';
   });
 
-  return gulp.src('docs/index.html')    
-    .pipe($.replace('<!-- INSERT EXAMPLES HERE -->', exampleFiles.join("\n")))        
+  return gulp.src('docs/index.html')
+    .pipe($.replace('<!-- INSERT EXAMPLES HERE -->', exampleFiles.join("\n")))
     .pipe(gulp.dest('./docs-built/'));
 });
 
